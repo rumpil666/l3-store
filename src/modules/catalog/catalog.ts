@@ -1,6 +1,5 @@
 import { Component } from '../component';
 import html from './catalog.tpl.html';
-import { productObserve } from '../../utils/eventAnalysis';
 
 import { ProductList } from '../productList/productList';
 
@@ -15,12 +14,13 @@ class Catalog extends Component {
   }
 
   async render() {
-    const productsResp = await fetch('/api/getProducts');
+    const productsResp = await fetch('/api/getProducts',{
+      headers: {
+        'x-userid': window.userId,
+      }
+    });
     const products = await productsResp.json();
-
     this.productList.update(products);
-
-    this.view.products.querySelectorAll('a').forEach((product: Element) => productObserve.observe(product,));
   }
 }
 
