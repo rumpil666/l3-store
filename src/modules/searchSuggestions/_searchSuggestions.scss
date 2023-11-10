@@ -1,0 +1,20 @@
+.search-suggestions {
+  display: flex;
+  justify-content: flex-start;
+
+  &__title {
+    font-weight: 550;
+    font-size: 22px;
+    line-height: 24px;
+  }
+
+  &__background {
+    background: var(--plate-color);
+    &--gradient {
+      background-image: linear-gradient(102.42deg, #da15b8 59.69%, #8d06cc);
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+  }
+}

@@ -14,11 +14,7 @@ class Catalog extends Component {
   }
 
   async render() {
-    const productsResp = await fetch('/api/getProducts',{
-      headers: {
-        'x-userid': window.userId,
-      }
-    });
+    const productsResp = await fetch('/api/getProducts');
     const products = await productsResp.json();
     this.productList.update(products);
   }
