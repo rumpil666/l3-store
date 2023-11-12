@@ -1,0 +1,27 @@
+.search-suggestions {
+  display: flex;
+  justify-content: flex-start;
+
+  &__title {
+    font-weight: 550;
+    font-size: 22px;
+    line-height: 24px;
+    width: fit-content;
+    margin-left: 14px;
+  }
+
+  &__hint {
+    background: var(--plate-color);
+    height: 24px;
+    border-radius: 8px;
+    padding: 0 6px 6px;
+
+    &--link {
+      text-decoration: none;
+      background-image: linear-gradient(102.42deg, #da15b8 59.69%, #8d06cc);
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+  }
+}
