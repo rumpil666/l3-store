@@ -1,5 +1,6 @@
 import { addElement } from '../../utils/helpers';
 import { Component } from '../component';
+import { productObserve } from '../../utils/eventAnalysis';
 import html from './homepage.tpl.html';
 
 import { ProductList } from '../productList/productList';
@@ -19,6 +20,7 @@ class Homepage extends Component {
       .then((res) => res.json())
       .then((products) => {
         this.popularProducts.update(products);
+        this.view.popular.querySelectorAll('a').forEach((product: Element) => productObserve.observe(product));
       });
 
     const isSuccessOrder = new URLSearchParams(window.location.search).get('isSuccessOrder');
